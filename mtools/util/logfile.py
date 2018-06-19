@@ -272,7 +272,7 @@ class LogFile(InputSource):
 
         ln = 0
         for ln, line in enumerate(self.filehandle):
-            line = line.decode("utf-8") 
+            line = line.decode("utf-8", "ignore") 
             if (self._has_level is None and
                     line[28:31].strip() in LogEvent.log_levels and
                     line[31:39].strip() in LogEvent.log_components):
